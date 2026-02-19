@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalibrierprotokoll - PST2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 22px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .info-section {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        
+        .info-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .info-label {
+            font-size: 11px;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+        
+        .info-value {
+            font-size: 16px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .data-section {
+            padding: 20px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: #667eea;
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        th {
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        tbody tr {
+            border-bottom: 1px solid #e9ecef;
+            transition: background 0.2s;
+        }
+        
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+        
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+        
+        td {
+            padding: 12px 10px;
+            color: #495057;
+        }
+        
+        td:first-child {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .footer {
+            padding: 15px 20px;
+            text-align: center;
+            background: #f8f9fa;
+            color: #6c757d;
+            font-size: 12px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #28a745;
+            color: white;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 18px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            table {
+                font-size: 13px;
+            }
+            
+            th, td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Kalibrierprotokoll</h1>
+            <p>Druckmesswertaufnehmer</p>
+            <span class="badge">DLR RA-PTE</span>
+        </div>
+        
+        <div class="info-section">
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Messstelle</div>
+                    <div class="info-value">PST2</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Seriennummer</div>
+                    <div class="info-value">241853</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Datum</div>
+                    <div class="info-value">19.01.10</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Hersteller</div>
+                    <div class="info-value">SCHAEVITZ</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Typ</div>
+                    <div class="info-value">P911-0003</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Messbereich</div>
+                    <div class="info-value">35 BAR</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Impedanz</div>
+                    <div class="info-value">350/350 OHM</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="data-section">
+            <h2 class="section-title">Messwerte</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Wert (Soll)<br><small>BAR/MBAR</small></th>
+                            <th>Signal<br><small>MV</small></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0.991000</td>
+                            <td>0.552000</td>
+                        </tr>
+                        <tr>
+                            <td>5.991000</td>
+                            <td>3.397000</td>
+                        </tr>
+                        <tr>
+                            <td>10.991000</td>
+                            <td>6.255000</td>
+                        </tr>
+                        <tr>
+                            <td>15.991000</td>
+                            <td>9.097990</td>
+                        </tr>
+                        <tr>
+                            <td>20.991000</td>
+                            <td>11.950000</td>
+                        </tr>
+                        <tr>
+                            <td>25.991000</td>
+                            <td>14.792000</td>
+                        </tr>
+                        <tr>
+                            <td>30.991000</td>
+                            <td>17.648000</td>
+                        </tr>
+                        <tr>
+                            <td>35.991000</td>
+                            <td>20.490000</td>
+                        </tr>
+                        <tr>
+                            <td>30.991000</td>
+                            <td>17.659000</td>
+                        </tr>
+                        <tr>
+                            <td>25.991000</td>
+                            <td>14.815000</td>
+                        </tr>
+                        <tr>
+                            <td>20.991000</td>
+                            <td>11.971000</td>
+                        </tr>
+                        <tr>
+                            <td>15.991000</td>
+                            <td>9.109990</td>
+                        </tr>
+                        <tr>
+                            <td>10.991000</td>
+                            <td>6.269000</td>
+                        </tr>
+                        <tr>
+                            <td>5.991000</td>
+                            <td>3.403000</td>
+                        </tr>
+                        <tr>
+                            <td>0.991000</td>
+                            <td>0.550000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Mess-Ort: P4.2 | Eigner: DLR/LA</p>
+            <p style="margin-top: 8px; font-size: 11px;">Kalibrierstandards: Drucknormal D&H</p>
+        </div>
+    </div>
+</body>
+</html>
